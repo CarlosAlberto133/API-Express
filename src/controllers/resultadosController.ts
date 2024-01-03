@@ -78,7 +78,7 @@ export const listarResultados = async (req: Request, res: Response) => {
           return res.status(500).json({ error: 'Erro interno do servidor' });
         }
     
-        const query = 'SELECT * FROM Resultado WHERE bimestre = ?';
+        const query = 'SELECT * FROM Resultado WHERE bimestre = ? ORDER BY FIELD(disciplina, "Biologia", "Artes", "Geografia", "Sociologia")';
     
         connection.query(query, [bimestre], (queryErr, results) => {
           connection.end();
