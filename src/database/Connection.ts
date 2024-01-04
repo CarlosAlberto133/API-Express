@@ -1,4 +1,4 @@
-import mysql from 'mysql';
+import mysql from 'mysql'
 
 export const createConnection = () => {
     return mysql.createConnection({
@@ -6,5 +6,5 @@ export const createConnection = () => {
         user: 'root',
         password: '',
         database: 'resultados',
-    });
-  };
+    })
+}
